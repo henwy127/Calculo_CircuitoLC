@@ -14,4 +14,16 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/core/imagem1.png</name>
+			<type>1</type>
+			<location>C:/Users/Thalles/Downloads/imagem1.png</location>
+		</link>
+		<link>
+			<name>src/core/imagem2.png</name>
+			<type>1</type>
+			<location>C:/Users/Thalles/Downloads/imagem2.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>
