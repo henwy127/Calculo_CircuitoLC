@@ -2,154 +2,125 @@
 
 Este repositório contém a resolução de um exercício de Física/Eletricidade sobre um circuito **LC oscilante**, implementado em **Java**.
 
-## 📘 Enunciado do exercício
+## Enunciado do exercício
 
-Em um circuito LC oscilante,  
-- \( L = 3{,}00 \text{ mH} \)  
-- \( C = 2{,}70 \text{ µF} \)
+Em um circuito LC oscilante:
+- L = 3,00 mH
+- C = 2,70 µF
 
-No instante \( t = 0 \), a carga do capacitor é zero e a corrente é \( i(0) = 2{,}00 \text{ A} \).
+No instante t = 0, a carga do capacitor é zero e a corrente é i(0) = 2,00 A.
 
 Pede-se:
-
 1. Qual é a carga máxima do capacitor?
-2. Em que instante \( t > 0 \) a taxa com que a energia é armazenada no capacitor é máxima pela primeira vez?
+2. Em que instante t > 0 a taxa com que a energia é armazenada no capacitor é máxima pela primeira vez?
 3. Qual é o valor dessa taxa máxima?
 
 ---
 
-## ⚙️ Modelo físico utilizado
+## Modelo físico utilizado
 
 Para um circuito LC ideal (sem resistência), a energia total se conserva:
 
-\[
-U = \frac{q^2}{2C} + \frac{Li^2}{2}
-\]
+U = q²/(2C) + Li²/2
 
 A frequência angular natural é:
 
-\[
-\omega = \frac{1}{\sqrt{LC}}
-\]
+ω = 1/√(LC)
 
-Com a condição inicial \( q(0)=0 \) e \( i(0)=I_0 \), temos:
+Com as condições iniciais q(0)=0 e i(0)=I0:
 
-\[
-q(t)=Q_{\max}\sin(\omega t), \quad i(t)=I_0\cos(\omega t)
-\]
+q(t) = Qmáx·sen(ωt)  
+i(t) = I0·cos(ωt)
 
-e
+e:
 
-\[
-Q_{\max}=\frac{I_0}{\omega}=I_0\sqrt{LC}
-\]
+Qmáx = I0/ω = I0·√(LC)
 
-A energia no capacitor:
+Energia no capacitor:
 
-\[
-U_C(t)=\frac{q^2(t)}{2C}
-\]
+Uc(t) = q²(t)/(2C)
 
-A taxa de armazenamento de energia no capacitor é:
+Taxa de armazenamento de energia no capacitor:
 
-\[
-\frac{dU_C}{dt} = \frac{q}{C}\frac{dq}{dt} = \frac{q\,i}{C}
-\]
+dUc/dt = (q/C)·(dq/dt) = (q·i)/C
 
-Substituindo as expressões senoidal/cossenoidal:
+Substituindo as expressões:
 
-\[
-\frac{dU_C}{dt} = \frac{Q_{\max}I_0}{C}\sin(\omega t)\cos(\omega t)
-= \frac{Q_{\max}I_0}{2C}\sin(2\omega t)
-\]
+dUc/dt = (Qmáx·I0/C)·sen(ωt)·cos(ωt)  
+dUc/dt = (Qmáx·I0/(2C))·sen(2ωt)
 
 ---
 
-## 🧮 Cálculos principais
+## Cálculos principais
 
 ### Dados em SI
-- \( L = 3{,}00 \times 10^{-3}\ \text{H} \)
-- \( C = 2{,}70 \times 10^{-6}\ \text{F} \)
-- \( I_0 = 2{,}00\ \text{A} \)
+- L = 3,00 × 10⁻³ H
+- C = 2,70 × 10⁻⁶ F
+- I0 = 2,00 A
 
 ### 1) Carga máxima no capacitor
-\[
-Q_{\max} = I_0\sqrt{LC}
-\]
-\[
-Q_{\max} = 2{,}00\sqrt{(3{,}00\times10^{-3})(2{,}70\times10^{-6})}
-\approx 1{,}80\times10^{-4}\ \text{C}
-\]
 
-✅ **Resultado:**  
-\[
-Q_{\max} \approx 1{,}80\times10^{-4}\ \text{C} = 180\ \mu\text{C}
-\]
+Qmáx = I0·√(LC)
 
-### 2) Primeiro instante \( t>0 \) de taxa máxima de armazenamento
-A taxa é máxima quando \(\sin(2\omega t)=1\), ou seja:
-\[
-2\omega t = \frac{\pi}{2}
-\Rightarrow t=\frac{\pi}{4\omega}
-\]
+Qmáx = 2,00·√[(3,00×10⁻³)(2,70×10⁻⁶)]  
+Qmáx ≈ 1,80×10⁻⁴ C
 
-Como
-\[
-\omega=\frac{1}{\sqrt{LC}} \approx 1{,}11\times10^4\ \text{rad/s}
-\]
+**Resultado:**  
+Qmáx ≈ 1,80×10⁻⁴ C = 180 µC
 
-\[
-t \approx \frac{\pi}{4(1{,}11\times10^4)} \approx 7{,}07\times10^{-5}\ \text{s}
-\]
+### 2) Primeiro instante t > 0 de taxa máxima de armazenamento
 
-✅ **Resultado:**  
-\[
-t \approx 7{,}07\times10^{-5}\ \text{s} = 70{,}7\ \mu\text{s}
-\]
+A taxa é máxima quando sen(2ωt)=1, então:
+
+2ωt = π/2  =>  t = π/(4ω)
+
+Como:
+
+ω = 1/√(LC) ≈ 1,11×10⁴ rad/s
+
+t ≈ π / [4·(1,11×10⁴)]  
+t ≈ 7,07×10⁻⁵ s
+
+**Resultado:**  
+t ≈ 7,07×10⁻⁵ s = 70,7 µs
 
 ### 3) Valor da taxa máxima
-\[
-\left(\frac{dU_C}{dt}\right)_{\max}=\frac{Q_{\max}I_0}{2C}
-\]
 
-\[
-\left(\frac{dU_C}{dt}\right)_{\max}
-\approx \frac{(1{,}80\times10^{-4})(2{,}00)}{2(2{,}70\times10^{-6})}
-\approx 66{,}7\ \text{W}
-\]
+(dUc/dt)máx = (Qmáx·I0)/(2C)
 
-✅ **Resultado:**  
-\[
-\left(\frac{dU_C}{dt}\right)_{\max} \approx 66{,}7\ \text{W}
-\]
+(dUc/dt)máx ≈ [(1,80×10⁻⁴)·2,00] / [2·(2,70×10⁻⁶)]  
+(dUc/dt)máx ≈ 66,7 W
+
+**Resultado:**  
+Taxa máxima ≈ 66,7 W
 
 ---
 
-## 💻 Implementação em Java
+## Implementação em Java
 
 O programa em Java:
-- Define os valores de \(L\), \(C\) e \(I_0\)
+- Define os valores de L, C e I0
 - Converte unidades para SI
-- Calcula \(\omega\), \(Q_{\max}\), \(t\) do primeiro máximo e \(\left(dU_C/dt\right)_{\max}\)
+- Calcula ω, Qmáx, t do primeiro máximo e (dUc/dt)máx
 - Exibe os resultados formatados no terminal
 
 ---
 
-## 📚 Bibliotecas utilizadas
+## Bibliotecas utilizadas
 
-Como o projeto está 100% em Java, a solução usa apenas bibliotecas padrão da JDK:
+A solução usa apenas bibliotecas padrão da JDK:
 
 - `java.lang.Math`
   - `Math.sqrt(...)`
   - `Math.PI`
-  - (opcionalmente `Math.sin(...)`/`Math.cos(...)` para validação)
+  - (opcional) `Math.sin(...)` e `Math.cos(...)` para validação
 - `System.out.printf(...)` para saída formatada
 
-✅ **Não há dependências externas** (Maven/Gradle) para os cálculos principais.
+**Não há dependências externas** (Maven/Gradle) para os cálculos principais.
 
 ---
 
-## ▶️ Como executar
+## Como executar
 
 Compile e rode com Java (JDK 8+):
 
@@ -158,14 +129,12 @@ javac Main.java
 java Main
 ```
 
-> Ajuste o nome do arquivo/classe principal conforme a estrutura do repositório.
+> Se o nome do arquivo principal for diferente, substitua `Main.java` pelo nome correto do seu arquivo.
 
 ---
 
-## ✅ Resumo dos resultados
+## Resumo dos resultados
 
-- **Carga máxima:** \(Q_{\max} \approx 1{,}80\times10^{-4}\ \text{C}\) (**180 µC**)
-- **Primeiro instante de taxa máxima:** \(t \approx 7{,}07\times10^{-5}\ \text{s}\) (**70,7 µs**)
-- **Taxa máxima de armazenamento de energia:** \(\approx 66{,}7\ \text{W}\)
-
----
+- Carga máxima: 1,80×10⁻⁴ C (180 µC)
+- Primeiro instante de taxa máxima: 7,07×10⁻⁵ s (70,7 µs)
+- Taxa máxima de armazenamento de energia: 66,7 W
