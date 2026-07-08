@@ -1,5 +1,13 @@
 # ⚡ Cálculo de Circuito LC (Java + Swing)
 
+## 📘 Enunciado
+
+Em um circuito LC oscilante, **L = 3,00 mH** e **C = 2,70 µF**.  
+No instante **t = 0**, a carga do capacitor é zero e a corrente é **2,00 A**.  
+(a) Qual é a carga máxima do capacitor?  
+(b) Em que instante de tempo **t > 0** a taxa com a qual a energia é armazenada no capacitor é máxima pela primeira vez?  
+(c) Qual é o valor dessa taxa máxima?
+
 Este projeto resolve um exercício de circuito **LC oscilante** usando **Java** com interface gráfica em **Java Swing**.
 
 ---
